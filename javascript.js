@@ -33,39 +33,44 @@ function whoWon(computerChoice, playerChoice) {
     console.log('get:', computerChoice);
     console.log('player:', playerChoice);
     let winner;
+    let loser;
+    let tie;
+    function outcome(computerChoice, playerChoice) {
     if (computerChoice == 'rock') {
         if (playerChoice == 'rock') {
-            winner = 'tie';
+            return tie;
         } else if (playerChoice == 'paper') {
-            winner = 'player';
+            return winner;
         } else {
-            winner = 'computer';
+            return loser;
         }
-        return winner;
     }
     if (computerChoice == 'paper') {
         if (playerChoice == 'rock') {
-            winner = 'computer';
-            return winner;
+            return loser;
         } else if (playerChoice == 'paper') {
-            winner = 'tie';
-            return winner;
+            return tie;
         } else {
-            winner = 'player';
             return winner;
         }
     }
     if (computerChoice == 'scissors') {
         if (playerChoice == 'rock') {
-            winner = 'player';
             return winner;
         } else if (playerChoice == 'paper') {
-            winner = 'computer';
-            return winner;
+            return loser;
         } else {
-            winner = 'tie';
-            return winner;
+            return tie;
         }
+    }
+    }
+    let outcometh = outcome(computerChoice, playerChoice);
+    if (outcometh == winner) {
+        return `You Win! ${playerChoice} beats ${computerChoice}`
+    } else if (outcometh == loser) {
+        return `You Lose! ${computerChoice} beats ${playerChoice}`
+    } else {
+        return "It's a tie!"
     }
 }
 
