@@ -65,7 +65,6 @@ function whoWon(computerChoice, playerChoice) {
         }
     }
     const outcometh = outcome(computerChoice, playerChoice);
-    console.log(outcometh);
     if (outcometh == 'winner') {
         return `You Win! ${playerChoice} beats ${computerChoice}`
     } else if (outcometh == 'loser') {
@@ -79,10 +78,18 @@ return result;
 }
 
 //Display who won
-let gameResult = game();
-console.log(gameResult);
+let gameOne = game();
+console.log(gameOne);
 
 //Need a way to play multiple times (five)
+let gameTwo = game();
+console.log(gameTwo);
+let gameThree = game();
+console.log(gameThree);
+let gameFour = game();
+console.log(gameFour);
+let gameFive = game();
+console.log(gameFive);
 
 //Need a system to keep track of scores
 
