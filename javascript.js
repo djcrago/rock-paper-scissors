@@ -12,7 +12,6 @@ function game() {
         }
     }
     const computerChoice = getComputerChoice();
-
     //Receive user input (choice)
         //Must accept all spellings
     function playerSelection() {
@@ -34,7 +33,6 @@ function game() {
         }
     }
     const playerChoice = playerSelection();
-
     //Determine winner
     function whoWon(computerChoice, playerChoice) {
         function outcome(computerChoice, playerChoice) {
@@ -74,31 +72,25 @@ function game() {
         }
     }
     let result = whoWon(computerChoice, playerChoice);
-
-    //Display who won
-    console.log(result);
     return result;
     }
-
 //Need a way to play multiple times (five)
 let gameResult;
 let scoreComputer = 0;
 let scorePlayer = 0;
-for (let i = 0; i < 5; i++) {
+for (let i = 1; i < 6; i++) {
     gameResult = game();
+    //Display who won
+    console.log(`Game ${i}: ${gameResult}`)
+    //Need a system to keep track of scores
     let resultName = gameResult.substr(4, 1);
-    console.log(resultName);
     if (resultName === 'W') {
         scorePlayer++;
     } else if (resultName === 'L') {
         scoreComputer++;
     }
-    console.log(scoreComputer);
-    console.log(scorePlayer);
 }
-
-//Need a system to keep track of scores
-
 //Determine overall winner
+
 
 //Display overall winner
