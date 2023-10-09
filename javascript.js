@@ -85,13 +85,15 @@ for (let i = 1; i < n; i++) {
     //Display who won
     console.log(`Game ${i}: ${gameResult}`)
     //Need a system to keep track of scores
-    let resultName = gameResult.substr(4, 1);
-    if (resultName === 'W') {
+    let resultName = gameResult.substr(4, 2);
+    if (resultName === 'Wi') {
         scorePlayer++;
-    } else if (resultName === 'L') {
+    } else if (resultName === 'Lo') {
         scoreComputer++;
-    } else {
+    } else if (resultName === ' a') {
         n++
+    } else {
+        i--
     }
 }
 //Determine overall winner
