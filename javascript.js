@@ -1,6 +1,7 @@
 //Need a way to initialize game
 function game() {
-    //Computer makes its choice randomly
+//Computer makes its choice randomly
+function individualGame() {
     function getComputerChoice() {
         let selector = Math.floor(Math.random() * 100);
         if (selector > 66) {
@@ -80,7 +81,7 @@ let scoreComputer = 0;
 let scorePlayer = 0;
 let n = 6;
 for (let i = 1; i < n; i++) {
-    gameResult = game();
+    gameResult = individualGame();
     //Display who won
     console.log(`Game ${i}: ${gameResult}`)
     //Need a system to keep track of scores
@@ -104,3 +105,4 @@ if (scorePlayer > scoreComputer) {
 }
 let finalMessage = finalScore + finalResult;
 console.log(finalMessage);
+}
