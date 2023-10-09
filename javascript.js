@@ -82,23 +82,22 @@ function game() {
 
 //Need a way to play multiple times (five)
 let gameResult;
-for (let i = 0; i < 2; i++) {
+let scoreComputer = 0;
+let scorePlayer = 0;
+for (let i = 0; i < 5; i++) {
     gameResult = game();
+    let resultName = gameResult.substr(4, 1);
+    console.log(resultName);
+    if (resultName === 'W') {
+        scorePlayer++;
+    } else if (resultName === 'L') {
+        scoreComputer++;
+    }
+    console.log(scoreComputer);
+    console.log(scorePlayer);
 }
 
 //Need a system to keep track of scores
-let scoreComputer = 0;
-let scorePlayer = 0;
-let resultName = result.substr(4, 1);
-console.log(resultName);
-if (resultName === 'W') {
-    scorePlayer++;
-} else if (resultName === 'L') {
-    scoreComputer++;
-}
-console.log(scoreComputer);
-console.log(scorePlayer);
-
 
 //Determine overall winner
 
