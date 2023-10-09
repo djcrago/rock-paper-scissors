@@ -78,20 +78,35 @@ return result;
 }
 
 //Display who won
-let gameOne = game();
-console.log(gameOne);
+// let gameOne = game();
+// console.log(gameOne);
 
 //Need a way to play multiple times (five)
-let gameTwo = game();
-console.log(gameTwo);
-let gameThree = game();
-console.log(gameThree);
-let gameFour = game();
-console.log(gameFour);
-let gameFive = game();
-console.log(gameFive);
+// let gameTwo = game();
+// console.log(gameTwo);
+// let gameThree = game();
+// console.log(gameThree);
+// let gameFour = game();
+// console.log(gameFour);
+// let gameFive = game();
+// console.log(gameFive);
+for (let i = 0; i <= 4; i++) {
+    let gameResult = game();
+    console.log(gameResult);
+}
 
 //Need a system to keep track of scores
+function scoreKeeper (gameOne) {
+    let scoreComputer = 0;
+    let scorePlayer = 0;
+    let resultNameOne = gameOne.substr(4, 1);
+    console.log(resultNameOne);
+    if (resultNameOne == 'W') {
+        scorePlayer++;
+    } else if (resultNameOne == 'L') {
+        scoreComputer++;
+    }
+}
 
 //Determine overall winner
 
