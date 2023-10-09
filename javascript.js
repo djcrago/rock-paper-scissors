@@ -18,14 +18,12 @@ function individualGame() {
     function playerSelection() {
         let playerChoice = prompt('Rock, Paper, or Scissors?');
         playerChoice = playerChoice.toLowerCase();
-        if (true) {
-            if (playerChoice === 'rock') {
-                playerChoice = 'Rock';
-            } else if (playerChoice ==='paper') {
-                playerChoice = 'Paper';
-            } else {
-                playerChoice = 'Scissors'
-            }
+        if (playerChoice === 'rock') {
+            playerChoice = 'Rock';
+        } else if (playerChoice ==='paper') {
+            playerChoice = 'Paper';
+        } else {
+            playerChoice = 'Scissors'
         }
         if (playerChoice != 'Rock' && playerChoice != 'Paper' && playerChoice != 'Scissors') {
             console.log("Invalid choice");
