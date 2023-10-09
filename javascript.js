@@ -19,23 +19,23 @@ function individualGame() {
         let playerChoice = prompt('Rock, Paper, or Scissors?');
         playerChoice = playerChoice.toLowerCase();
         if (playerChoice === 'rock') {
-            playerChoice = 'Rock';
+            return playerChoice = 'Rock';
         } else if (playerChoice ==='paper') {
-            playerChoice = 'Paper';
-        } else {
-            playerChoice = 'Scissors'
+            return layerChoice = 'Paper';
+        } else if (playerChoice === 'scissors') {
+            return playerChoice = 'Scissors'
         }
-        if (playerChoice != 'Rock' && playerChoice != 'Paper' && playerChoice != 'Scissors') {
-            console.log("Invalid choice");
-        } else {
-            return playerChoice;
+        else {
+            return playerChoice = 'Invalid';
         }
     }
     const playerChoice = playerSelection();
     //Determine winner
     function whoWon(computerChoice, playerChoice) {
         function outcome(computerChoice, playerChoice) {
-            if (computerChoice === 'Rock') {
+            if (playerChoice === 'Invalid') {
+                return 'invalid';
+            } else if (computerChoice === 'Rock') {
                 if (playerChoice === 'Rock') {
                     return 'tie';
                 } else if (playerChoice === 'Paper') {
@@ -59,10 +59,12 @@ function individualGame() {
                 } else {
                     return 'tie';
                 }
-            }
+            } 
         }
         const outcometh = outcome(computerChoice, playerChoice);
-        if (outcometh === 'winner') {
+        if (outcometh === 'invalid') {
+            return "Enter a valid choice!"
+        } else if (outcometh === 'winner') {
             return `You Win! ${playerChoice} beats ${computerChoice}`
         } else if (outcometh === 'loser') {
             return `You Lose! ${computerChoice} beats ${playerChoice}`
