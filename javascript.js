@@ -4,11 +4,11 @@ function game() {
 function getComputerChoice() {
     let selector = Math.floor(Math.random() * 100);
     if (selector > 66) {
-        return 'rock';
+        return 'Rock';
     } else if (selector < 33) {
-        return 'paper';
+        return 'Paper';
     } else {
-        return 'scissors';
+        return 'Scissors';
     }
 }
 const computerChoice = getComputerChoice();
@@ -18,7 +18,16 @@ const computerChoice = getComputerChoice();
 function playerSelection() {
     let playerChoice = prompt('Rock, Paper, or Scissors?');
     playerChoice = playerChoice.toLowerCase();
-    if (playerChoice != 'rock' && playerChoice != 'paper' && playerChoice != 'scissors') {
+    if (true) {
+        if (playerChoice == 'rock') {
+            playerChoice = 'Rock';
+        } else if (playerChoice =='paper') {
+            playerChoice = 'Paper';
+        } else {
+            playerChoice = 'Scissors'
+        }
+    }
+    if (playerChoice != 'Rock' && playerChoice != 'Paper' && playerChoice != 'Scissors') {
         console.log("Invalid choice");
     } else {
         return playerChoice;
@@ -29,26 +38,26 @@ const playerChoice = playerSelection();
 //Determine winner
 function whoWon(computerChoice, playerChoice) {
     function outcome(computerChoice, playerChoice) {
-        if (computerChoice == 'rock') {
-            if (playerChoice == 'rock') {
+        if (computerChoice == 'Rock') {
+            if (playerChoice == 'Rock') {
                 return 'tie';
-            } else if (playerChoice == 'paper') {
+            } else if (playerChoice == 'Paper') {
                 return 'winner';
             } else {
                 return 'loser';
             }
-        } else if (computerChoice == 'paper') {
-            if (playerChoice == 'rock') {
+        } else if (computerChoice == 'Paper') {
+            if (playerChoice == 'Rock') {
                 return 'loser'; 
-            } else if (playerChoice == 'paper') {
+            } else if (playerChoice == 'Paper') {
                 return 'tie'; 
             } else {
                 return 'winner';
             }
-        } else if (computerChoice == 'scissors') {
-            if (playerChoice == 'rock') {
+        } else if (computerChoice == 'Scissors') {
+            if (playerChoice == 'Rock') {
                 return 'winner';
-            } else if (playerChoice == 'paper') {
+            } else if (playerChoice == 'Paper') {
                 return 'loser';
             } else {
                 return 'tie';
@@ -56,6 +65,7 @@ function whoWon(computerChoice, playerChoice) {
         }
     }
     const outcometh = outcome(computerChoice, playerChoice);
+    console.log(outcometh);
     if (outcometh == 'winner') {
         return `You Win! ${playerChoice} beats ${computerChoice}`
     } else if (outcometh == 'loser') {
@@ -67,10 +77,15 @@ function whoWon(computerChoice, playerChoice) {
 let result = whoWon(computerChoice, playerChoice);
 return result;
 }
+
 //Display who won
 let gameResult = game();
 console.log(gameResult);
+
 //Need a way to play multiple times (five)
+
 //Need a system to keep track of scores
+
 //Determine overall winner
+
 //Display overall winner
