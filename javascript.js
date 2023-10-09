@@ -78,7 +78,8 @@ function game() {
 let gameResult;
 let scoreComputer = 0;
 let scorePlayer = 0;
-for (let i = 1; i < 6; i++) {
+let n = 6;
+for (let i = 1; i < n; i++) {
     gameResult = game();
     //Display who won
     console.log(`Game ${i}: ${gameResult}`)
@@ -88,6 +89,8 @@ for (let i = 1; i < 6; i++) {
         scorePlayer++;
     } else if (resultName === 'L') {
         scoreComputer++;
+    } else {
+        n++
     }
 }
 //Determine overall winner
