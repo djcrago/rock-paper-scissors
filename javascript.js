@@ -30,44 +30,38 @@ console.log('Player:', playerChoice);
 
 //Determine winner
 function whoWon(computerChoice, playerChoice) {
-    console.log('get:', computerChoice);
-    console.log('player:', playerChoice);
-    let winner;
-    let loser;
-    let tie;
     function outcome(computerChoice, playerChoice) {
-    if (computerChoice == 'rock') {
-        if (playerChoice == 'rock') {
-            return tie;
-        } else if (playerChoice == 'paper') {
-            return winner;
-        } else {
-            return loser;
+        if (computerChoice == 'rock') {
+            if (playerChoice == 'rock') {
+                return 'tie';
+            } else if (playerChoice == 'paper') {
+                return 'winner';
+            } else {
+                return 'loser';
+            }
+        } else if (computerChoice == 'paper') {
+            if (playerChoice == 'rock') {
+                return 'loser'; 
+            } else if (playerChoice == 'paper') {
+                return 'tie'; 
+            } else {
+                return 'winner';
+            }
+        } else if (computerChoice == 'scissors') {
+            if (playerChoice == 'rock') {
+                return 'winner';
+            } else if (playerChoice == 'paper') {
+                return 'loser';
+            } else {
+                return 'tie';
+            }
         }
     }
-    if (computerChoice == 'paper') {
-        if (playerChoice == 'rock') {
-            return loser;
-        } else if (playerChoice == 'paper') {
-            return tie;
-        } else {
-            return winner;
-        }
-    }
-    if (computerChoice == 'scissors') {
-        if (playerChoice == 'rock') {
-            return winner;
-        } else if (playerChoice == 'paper') {
-            return loser;
-        } else {
-            return tie;
-        }
-    }
-    }
-    let outcometh = outcome(computerChoice, playerChoice);
-    if (outcometh == winner) {
+    const outcometh = outcome(computerChoice, playerChoice);
+    console.log('outcometh:', outcometh);
+    if (outcometh == 'winner') {
         return `You Win! ${playerChoice} beats ${computerChoice}`
-    } else if (outcometh == loser) {
+    } else if (outcometh == 'loser') {
         return `You Lose! ${computerChoice} beats ${playerChoice}`
     } else {
         return "It's a tie!"
