@@ -1,5 +1,5 @@
 //Need a way to initialize game
-
+function game() {
 //Computer makes its choice randomly
 function getComputerChoice() {
     let selector = Math.floor(Math.random() * 100);
@@ -12,7 +12,6 @@ function getComputerChoice() {
     }
 }
 const computerChoice = getComputerChoice();
-console.log('Computer:', computerChoice);
 
 //Receive user input (choice)
     //Must accept all spellings
@@ -26,7 +25,6 @@ function playerSelection() {
     }
 }
 const playerChoice = playerSelection();
-console.log('Player:', playerChoice);
 
 //Determine winner
 function whoWon(computerChoice, playerChoice) {
@@ -58,7 +56,6 @@ function whoWon(computerChoice, playerChoice) {
         }
     }
     const outcometh = outcome(computerChoice, playerChoice);
-    console.log('outcometh:', outcometh);
     if (outcometh == 'winner') {
         return `You Win! ${playerChoice} beats ${computerChoice}`
     } else if (outcometh == 'loser') {
@@ -67,10 +64,12 @@ function whoWon(computerChoice, playerChoice) {
         return "It's a tie!"
     }
 }
-
+let result = whoWon(computerChoice, playerChoice);
+return result;
+}
 //Display who won
-console.log('Winner:', whoWon(computerChoice, playerChoice));
-
+let gameResult = game();
+console.log(gameResult);
 //Need a way to play multiple times (five)
 //Need a system to keep track of scores
 //Determine overall winner
