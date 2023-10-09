@@ -91,6 +91,15 @@ for (let i = 1; i < 6; i++) {
     }
 }
 //Determine overall winner
-
-
+let finalScore = `Final Score\nYou: ${scorePlayer}\nComputer: ${scoreComputer}\n`;
 //Display overall winner
+let finalResult;
+if (scorePlayer > scoreComputer) {
+    finalResult = 'You Win!!!'
+} else if (scoreComputer > scorePlayer) {
+    finalResult = 'You Lost!'
+} else {
+    finalResult = 'It\'s a Tie!'
+}
+let finalMessage = finalScore + finalResult;
+console.log(finalMessage);
