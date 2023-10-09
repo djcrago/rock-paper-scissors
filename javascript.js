@@ -99,10 +99,8 @@ let finalScore = `Final Score\nYou: ${scorePlayer}\nComputer: ${scoreComputer}\n
 let finalResult;
 if (scorePlayer > scoreComputer) {
     finalResult = 'You Win!!!'
-} else if (scoreComputer > scorePlayer) {
-    finalResult = 'You Lost!'
 } else {
-    finalResult = 'It\'s a Tie!'
+    finalResult = 'You Lost!'
 }
 let finalMessage = finalScore + finalResult;
 console.log(finalMessage);
