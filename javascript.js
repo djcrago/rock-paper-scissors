@@ -1,4 +1,5 @@
 //Need a way to initialize game
+
 //Computer makes its choice randomly
 function getComputerChoice() {
     let selector = Math.floor(Math.random() * 100);
@@ -10,7 +11,9 @@ function getComputerChoice() {
         return 'scissors';
     }
 }
-console.log('getComputerChoice:', getComputerChoice());
+const computerChoice = getComputerChoice();
+console.log('Computer:', computerChoice);
+
 //Receive user input (choice)
     //Must accept all spellings
 function playerSelection() {
@@ -22,32 +25,53 @@ function playerSelection() {
         return playerChoice;
     }
 }
-console.log('playerSelection:', playerSelection());
+const playerChoice = playerSelection();
+console.log('Player:', playerChoice);
+
 //Determine winner
-function whoWon(getComputerChoice, playerSelection) {
+function whoWon(computerChoice, playerChoice) {
+    console.log('get:', computerChoice);
+    console.log('player:', playerChoice);
     let winner;
-    if (getComputerChoice === 'rock') {
-        if (playerSelection == 'rock') {
+    if (computerChoice == 'rock') {
+        if (playerChoice == 'rock') {
+            winner = 'tie';
+        } else if (playerChoice == 'paper') {
+            winner = 'player';
+        } else {
+            winner = 'computer';
+        }
+        return winner;
+    }
+    if (computerChoice == 'paper') {
+        if (playerChoice == 'rock') {
+            winner = 'computer';
+            return winner;
+        } else if (playerChoice == 'paper') {
             winner = 'tie';
             return winner;
-        } else if (playerSelection == 'paper') {
+        } else {
             winner = 'player';
-            return winner;
-        } else if (playerSelection == 'scissors') {
-            winner = 'computer';
             return winner;
         }
     }
-    if (getComputerChoice === 'paper') {
-        return winner;
-    }
-    if (getComputerChoice === 'scissors') {
-        return winner;
+    if (computerChoice == 'scissors') {
+        if (playerChoice == 'rock') {
+            winner = 'player';
+            return winner;
+        } else if (playerChoice == 'paper') {
+            winner = 'computer';
+            return winner;
+        } else {
+            winner = 'tie';
+            return winner;
+        }
     }
 }
-console.log(whoWon());
 
 //Display who won
+console.log('Winner:', whoWon(computerChoice, playerChoice));
+
 //Need a way to play multiple times (five)
 //Need a system to keep track of scores
 //Determine overall winner
