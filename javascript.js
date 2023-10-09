@@ -80,6 +80,11 @@ let gameResult;
 let scoreComputer = 0;
 let scorePlayer = 0;
 let n = 6;
+//I added these console.logs so that you can see the gameResult (ex. 'Game 1: You Lose! Paper beats Rock') from the first game whether the console is narrow or wide
+console.log('');
+console.log('');
+console.log('');
+console.log('');
 for (let i = 1; i < n; i++) {
     gameResult = individualGame();
     //Display who won

@@ -11,6 +11,7 @@ Things I practiced and learned how to do include:
 *Using a for loop and incrementing variables
 *Concatenating and embeding variables into strings using backticks
 *Creating a usable button
+*Fixing bugs, optimizing code efficiency, and improving user experience
 
 I could have gone in different directions a few times. I tried to always go with the route that involved the least amount of repetition and most amount of automation.
 
