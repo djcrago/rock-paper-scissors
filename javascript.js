@@ -84,5 +84,13 @@ function playRound() {
         newGame.setAttribute('id', 'newGame');
         newGame.textContent = 'New Game'
         document.body.appendChild(newGame);
+        newGame.addEventListener('click', () => {
+            scorePlayer = 0;
+            scoreComputer = 0;
+            resultBox.textContent = '';
+            runningScoreBox.textContent = '';
+            finalScoreBox.textContent = '';
+            document.body.removeChild(newGame);
+        });
     }
 }
