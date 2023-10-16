@@ -1,7 +1,7 @@
 //Need a way to initialize game
 function game() {
 //Computer makes its choice randomly
-function individualGame() {
+function playRound() {
     function getComputerChoice() {
         let selector = Math.floor(Math.random() * 100);
         if (selector > 66) {
@@ -15,6 +15,9 @@ function individualGame() {
     const computerChoice = getComputerChoice();
     //Receive user input (choice)
         //Must accept all spellings
+    const rock = document.querySelector('#rock');
+    const paper = document.querySelector('#paper');
+    const scissors = document.querySelector('#scissors');
     function playerSelection() {
         let playerChoice = prompt('Rock, Paper, or Scissors?');
         playerChoice = playerChoice.toLowerCase();
@@ -79,14 +82,14 @@ function individualGame() {
 let gameResult;
 let scoreComputer = 0;
 let scorePlayer = 0;
-let n = 6;
+let n = 2;
 //I added these console.logs so that you can see the gameResult (ex. 'Game 1: You Lose! Paper beats Rock') from the first game whether the console is narrow or wide
 console.log('');
 console.log('');
 console.log('');
 console.log('');
 for (let i = 1; i < n; i++) {
-    gameResult = individualGame();
+    gameResult = playRound();
     //Display who won
     console.log(`Game ${i}: ${gameResult}`)
     //Need a system to keep track of scores
