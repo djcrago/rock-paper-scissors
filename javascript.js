@@ -2,22 +2,16 @@
 let playerChoice;
 let scoreComputer = 0;
 let scorePlayer = 0;
-const rock = document.querySelector('#rock');
-    rock.addEventListener('click', () => {
-        playerChoice = 'Rock';
+const rock = document.querySelector('#Rock');
+const paper = document.querySelector('#Paper');
+const scissors = document.querySelector('#Scissors');
+let choices = [rock, paper, scissors];
+let setChoice = choices.map((choice) => {
+    choice.addEventListener('click', () => {
+        playerChoice = choice.getAttribute('id');
         playRound();
     });
-const paper = document.querySelector('#paper');
-    paper.addEventListener('click', () => {
-        playerChoice = 'Paper';
-        playRound();
-    });
-const scissors = document.querySelector('#scissors');
-    scissors.addEventListener('click', () => {
-        playerChoice = 'Scissors';
-        playRound();
-    });
-
+})
 function playRound() {
     function getComputerChoice() {
         //Computer makes its choice randomly
