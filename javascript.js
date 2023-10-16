@@ -71,13 +71,16 @@ function playRound() {
     let finalScoreBox = document.querySelector('#finalScore');
     //The overall winner is the first to reach 5 points
     if (scoreComputer >= 5 || scorePlayer >= 5) {
+        document.body.removeChild(rock);
+        document.body.removeChild(paper);
+        document.body.removeChild(scissors);
         let finalScore = `Final Score - You: ${scorePlayer} Computer: ${scoreComputer}`;
         let finalResult;
         if (scorePlayer > scoreComputer) {
             finalResult = 'You Win!!!'
         } else {
             finalResult = 'You Lost!'
-    }   
+        }   
         let finalMessage = finalScore + ' ' + finalResult;
         finalScoreBox.textContent = finalMessage;
         const newGame = document.createElement('button');
