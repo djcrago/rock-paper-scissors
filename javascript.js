@@ -60,11 +60,11 @@ function playRound() {
         }
         const outcometh = outcome(computerChoice, playerChoice);
         if (outcometh === 'winner') {
-            return `You Win! ${playerChoice} beats ${computerChoice}`
+            return `You Win! ${playerChoice} beats ${computerChoice}\n`
         } else if (outcometh === 'loser') {
-            return `You Lose! ${computerChoice} beats ${playerChoice}`
+            return `You Lose! ${computerChoice} beats ${playerChoice}\n`
         } else {
-            return "It's a tie!"
+            return "It's a tie!\n"
         }
     }
     let result = whoWon(computerChoice, playerChoice);
@@ -83,7 +83,7 @@ function playRound() {
     } else {
         finalResult = 'You Lost!'
     }
-    let finalMessage = finalScore + finalResult;
+    let finalMessage = result + finalScore + finalResult;
     console.log(finalMessage);
     }
 //Need a way to play multiple times (five)
