@@ -84,6 +84,8 @@ function playRound() {
         finalResult = 'You Lost!'
     }
     let finalMessage = result + finalScore + finalResult;
+    let resultBox = document.querySelector('#result');
+    resultBox.textContent = finalMessage;
     console.log(finalMessage);
     }
 //Need a way to play multiple times (five)
