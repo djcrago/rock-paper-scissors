@@ -71,9 +71,10 @@ function playRound() {
     let finalScoreBox = document.querySelector('#finalScore');
     //The overall winner is the first to reach 5 points
     if (scoreComputer >= 5 || scorePlayer >= 5) {
-        document.body.removeChild(rock);
-        document.body.removeChild(paper);
-        document.body.removeChild(scissors);
+        let btns = document.querySelector('#btns');
+        btns.removeChild(rock);
+        btns.removeChild(paper);
+        btns.removeChild(scissors);
         let finalScore = `Final Score - You: ${scorePlayer} Computer: ${scoreComputer}`;
         let finalResult;
         if (scorePlayer > scoreComputer) {
@@ -94,6 +95,9 @@ function playRound() {
             runningScoreBox.textContent = '';
             finalScoreBox.textContent = '';
             document.body.removeChild(newGame);
+            btns.appendChild(rock);
+            btns.appendChild(paper);
+            btns.appendChild(scissors);
         });
     }
 }
