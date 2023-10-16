@@ -64,7 +64,7 @@ function playRound() {
             scoreComputer++;
             resultBox.textContent = `You Lose! ${computerChoice} beats ${playerChoice}`;
         } else {
-            resultBox.textContent = `It's a tie between ${playerChoice}s!`;
+            resultBox.textContent = `It's a tie between ${playerChoice.toLowerCase()}s!`;
         }
     let runningScoreBox = document.querySelector('#runningScore');
     runningScoreBox.textContent = `Player: ${scorePlayer} vs. Computer: ${scoreComputer}`;
