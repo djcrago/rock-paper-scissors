@@ -71,20 +71,21 @@ function playRound() {
         } else {
             resultBox.textContent = "It's a tie!\n";
         }
-    let runningScore = document.querySelector('#runningScore');
-    runningScore.textContent = `Player: ${scorePlayer} vs. Computer: ${scoreComputer}`
-    
-    let finalScore = `Final Score\nYou: ${scorePlayer}\nComputer: ${scoreComputer}\n`;
-    let finalResult;
-    if (scorePlayer > scoreComputer) {
-        finalResult = 'You Win!!!'
-    } else {
-        finalResult = 'You Lost!'
+    let runningScoreBox = document.querySelector('#runningScore');
+    runningScoreBox.textContent = `Player: ${scorePlayer} vs. Computer: ${scoreComputer}`;
+    let finalScoreBox = document.querySelector('#finalScore');
+    if (scoreComputer >= 5 || scorePlayer >= 5) {
+        let finalScore = `Final Score\nYou: ${scorePlayer}\nComputer: ${scoreComputer}\n`;
+        let finalResult;
+        if (scorePlayer > scoreComputer) {
+            finalResult = 'You Win!!!'
+        } else {
+            finalResult = 'You Lost!'
+    }   
+        let finalMessage = finalScore + finalResult;
+        finalScoreBox.textContent = finalMessage;
     }
-    let finalMessage = result + finalScore + finalResult;
-    
-    console.log(finalMessage);
-    }
+}
 //Need a way to play multiple times (five)
 //Determine overall winner
 //Display overall winner
