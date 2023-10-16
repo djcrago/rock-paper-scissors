@@ -30,64 +30,59 @@ function playRound() {
             return 'Scissors';
         }
     }
+    //Step 1: getComputerChoice
     const computerChoice = getComputerChoice();
-    //Determine winner
     function whoWon(computerChoice, playerChoice) {
+        //Determine winner
         if (computerChoice === 'Rock') {
             if (playerChoice === 'Rock') {
                 return 'tie';
             } else if (playerChoice === 'Paper') {
                 return 'winner';
-            } else {
-                return 'loser';
-            }
+            } else return 'loser';
         } else if (computerChoice === 'Paper') {
             if (playerChoice === 'Rock') {
                 return 'loser'; 
             } else if (playerChoice === 'Paper') {
                 return 'tie'; 
-            } else {
-                return 'winner';
-            }
+            } else return 'winner';
         } else if (computerChoice === 'Scissors') {
             if (playerChoice === 'Rock') {
                 return 'winner';
             } else if (playerChoice === 'Paper') {
                 return 'loser';
-            } else {
-                return 'tie';
-            }
-        } 
+            } else return 'tie';
+        }
     }
     //Display winner
     let resultBox = document.querySelector('#result');
     const outcome = whoWon(computerChoice, playerChoice);
         if (outcome === 'winner') {
             scorePlayer++;
-            resultBox.textContent = `You Win! ${playerChoice} beats ${computerChoice}\n`;
+            resultBox.textContent = `You Win! ${playerChoice} beats ${computerChoice}`;
         } else if (outcome === 'loser') {
             scoreComputer++;
-            resultBox.textContent = `You Lose! ${computerChoice} beats ${playerChoice}\n`;
+            resultBox.textContent = `You Lose! ${computerChoice} beats ${playerChoice}`;
         } else {
-            resultBox.textContent = "It's a tie!\n";
+            resultBox.textContent = `It's a tie between ${playerChoice}s!`;
         }
     let runningScoreBox = document.querySelector('#runningScore');
     runningScoreBox.textContent = `Player: ${scorePlayer} vs. Computer: ${scoreComputer}`;
     let finalScoreBox = document.querySelector('#finalScore');
+    //The overall winner is the first to reach 5 points
     if (scoreComputer >= 5 || scorePlayer >= 5) {
-        let finalScore = `Final Score\nYou: ${scorePlayer}\nComputer: ${scoreComputer}\n`;
+        let finalScore = `Final Score - You: ${scorePlayer} Computer: ${scoreComputer}`;
         let finalResult;
         if (scorePlayer > scoreComputer) {
             finalResult = 'You Win!!!'
         } else {
             finalResult = 'You Lost!'
     }   
-        let finalMessage = finalScore + finalResult;
+        let finalMessage = finalScore + ' ' + finalResult;
         finalScoreBox.textContent = finalMessage;
+        const newGame = document.createElement('button');
+        newGame.setAttribute('id', 'newGame');
+        newGame.textContent = 'New Game'
+        document.body.appendChild(newGame);
     }
 }
-//Need a way to play multiple times (five)
-//Determine overall winner
-//Display overall winner
-
-console.log(('Scissors' > 'Rock' && 'Rock' > 'Paper'));
