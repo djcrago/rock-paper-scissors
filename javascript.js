@@ -15,24 +15,14 @@ function playRound() {
     const computerChoice = getComputerChoice();
     //Receive user input (choice)
         //Must accept all spellings
+    let playerChoice;
     const rock = document.querySelector('#rock');
+    rock.addEventListener('click', () => playerChoice = 'Rock');
     const paper = document.querySelector('#paper');
+    paper.addEventListener('click', () => playerChoice = 'Paper');
     const scissors = document.querySelector('#scissors');
-    function playerSelection() {
-        let playerChoice = prompt('Rock, Paper, or Scissors?');
-        playerChoice = playerChoice.toLowerCase();
-        if (playerChoice === 'rock') {
-            return playerChoice = 'Rock';
-        } else if (playerChoice ==='paper') {
-            return layerChoice = 'Paper';
-        } else if (playerChoice === 'scissors') {
-            return playerChoice = 'Scissors'
-        }
-        else {
-            return playerChoice = 'Invalid';
-        }
-    }
-    const playerChoice = playerSelection();
+    scissors.addEventListener('click', () => playerChoice = 'Scissors');
+
     //Determine winner
     function whoWon(computerChoice, playerChoice) {
         function outcome(computerChoice, playerChoice) {
@@ -83,11 +73,6 @@ let gameResult;
 let scoreComputer = 0;
 let scorePlayer = 0;
 let n = 2;
-//I added these console.logs so that you can see the gameResult (ex. 'Game 1: You Lose! Paper beats Rock') from the first game whether the console is narrow or wide
-console.log('');
-console.log('');
-console.log('');
-console.log('');
 for (let i = 1; i < n; i++) {
     gameResult = playRound();
     //Display who won
