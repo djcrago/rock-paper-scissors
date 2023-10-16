@@ -71,6 +71,8 @@ function playRound() {
         } else {
             resultBox.textContent = "It's a tie!\n";
         }
+    let runningScore = document.querySelector('#runningScore');
+    runningScore.textContent = `Player: ${scorePlayer} vs. Computer: ${scoreComputer}`
     
     let finalScore = `Final Score\nYou: ${scorePlayer}\nComputer: ${scoreComputer}\n`;
     let finalResult;
